@@ -8,75 +8,77 @@
 </head>
 <body>
 
-<div class="page">
+    <div class="page">
 
-    <div class="left-column">
-
-        <div class="image-container">
-            <img src="book.jpg" alt="Book Cover" class="book-image">
-        </div>
-
-        <button class="sample-btn">Read sample</button>
-    </div>
-
-    <div class="middle-column">
-        <h1>The Wings of Fire: The Brightest Night: A Graphic Novel (Wings of Fire Graphic Novel #5)</h1>
-
-        <p class="author">by Tui T. Sutherland (Author), Mike Holmes (Illustrator)</p>
-
-        <p class="rating">4.6 out of 5 stars | 6,658 ratings</p>
-
-        <p class="series">Book 5 of 10: Wings of Fire Graphic</p>
-
-        <div class="description-box">
-            <p><strong>The graphic novel adaptations of the #1 New York Times bestselling Wings of Fire series continue to set the world on fire!</strong></p>
-
-            <p>One will have the power of wings of fire . . .</p>
-
-            <p>Sunny has always taken the Dragonet Prophecy very seriously. If Pyrrhia's dragons need her, Clay, Tsunami, Glory, and Starflight to end the war, she's ready to try.</p>
-
-            <p>But shattering news has shaken Sunny's faith in their destiny. Is it possible for anyone to end this war?</p>
-
-            <p>Buried secrets and deadly surprises await as Sunny must decide once and for all: Is her destiny already written?</p>
-
-            <p>Or can five dragonets change their fate and save the world?</p>
-        </div>
-    </div>
-
-    <div class="right-column">
-
-        <div class="format-row">
-            <div class="format-box" onclick="selectFormat('kindle')">
-                <p class="format-title">Kindle Edition</p>
-                <p class="format-price" id="kindlePrice">$8.99</p>
+        <div class="left-column">
+            <div class="image-container" id="mainImageContainer">
+                <img src="book.jpg" alt="Book Cover" class="book-image">
             </div>
+            <button class="sample-btn">Read sample</button>
+        </div>
 
-            <div class="format-box" onclick="selectFormat('hardcover')">
-                <p class="format-title">Hardcover</p>
-                <p class="format-price" id="hardcoverPrice">$34.43</p>
+        <div class="middle-column">
+            <h1>The Wings of Fire: The Brightest Night: A Graphic Novel (Wings of Fire Graphic Novel #5)</h1>
+
+            <p class="author">by Tui T. Sutherland (Author), Mike Holmes (Illustrator)</p>
+
+            <p class="rating">4.6 out of 5 stars | 6,658 ratings</p>
+
+            <p class="series">Book 5 of 10: Wings of Fire Graphic</p>
+
+            <div class="description-box">
+                <p><strong>The graphic novel adaptations of the #1 New York Times bestselling Wings of Fire series continue to set the world on fire!</strong></p>
+
+                <p>One will have the power of wings of fire . . .</p>
+
+                <p>Sunny has always taken the Dragonet Prophecy very seriously. If Pyrrhia's dragons need her, Clay, Tsunami, Glory, and Starflight to end the war, she's ready to try. She even has some good ideas how to do it, if anyone would listen to her.</p>
+
+                <p>But shattering news from Morrowseer has shaken Sunny's faith in their destiny. Is it possible for anyone to end this terrible war and choose a new SandWing queen? What if everything they've been through was for nothing?</p>
+
+                <p>Buried secrets, deadly surprises, and an unexpected side to scavengers are all waiting for her in the shifting sands of the desert, where Sunny must decide once and for all: Is her destiny already written?</p>
+
+                <p>Or can five dragonets change their fate and save the world . . . the way they choose?</p>
             </div>
         </div>
 
-        <div class="format-box selected" onclick="selectFormat('paperback')">
-            <p class="format-title">Paperback</p>
-            <p class="format-price" id="paperbackPrice">$16.99</p>
-        </div>
+        <div class="right-column">
+            <div class="format-row">
+                <div class="format-box">
+                    <p class="format-title">Kindle Edition</p>
+                    <p class="format-price">$8.99</p>
+                </div>
 
-        <div class="buy-box">
-            <h2 id="totalPrice">$16.99</h2>
+                <div class="format-box">
+                    <p class="format-title">Hardcover</p>
+                    <p class="format-price">$34.43</p>
+                </div>
+            </div>
 
-            <p>FREE delivery Friday, April 24 on orders over $35</p>
-            <p>Prime members get FREE delivery Tomorrow</p>
+            <div class="format-box selected">
+                <p class="format-title">Paperback</p>
+                <p class="format-price">$16.99</p>
+            </div>
 
-            <button class="cart-btn" onclick="buyBook()">Add to Cart</button>
-            <button class="buy-btn" onclick="buyBook()">Buy Now</button>
+            <div class="buy-box">
+                <h2>$16.99</h2>
+                <p>FREE delivery Friday, April 24 on orders over $35</p>
+                <p>Prime members get FREE delivery Tomorrow</p>
+
+                <button class="cart-btn">Add to Cart</button>
+                <button class="buy-btn">Buy Now</button>
+            </div>
         </div>
 
     </div>
 
-</div>
+    <div class="zoom-modal" id="zoomModal">
+        <div class="zoom-content">
+            <span class="close-btn" id="closeZoom">&times;</span>
+            <img src="book.jpg" alt="Zoomed Book Cover" class="zoomed-image" id="zoomedImage">
+            <div class="zoom-help">Use mouse wheel to zoom</div>
+        </div>
+    </div>
 
-<script src="script.js"></script>
-
+    <script src="price.js"></script>
 </body>
 </html>
