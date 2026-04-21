@@ -64,18 +64,58 @@
                 <p>FREE delivery Friday, April 24 on orders over $35</p>
                 <p>Prime members get FREE delivery Tomorrow</p>
 
-                <button class="cart-btn">Add to Cart</button>
+                <button class="cart-btn" onclick="addToCart()">Add to Cart</button>
                 <button class="buy-btn">Buy Now</button>
             </div>
         </div>
 
     </div>
 
+    <!-- ZOOM POPUP -->
     <div class="zoom-modal" id="zoomModal">
         <div class="zoom-content">
             <span class="close-btn" id="closeZoom">&times;</span>
             <img src="book.jpg" alt="Zoomed Book Cover" class="zoomed-image" id="zoomedImage">
-            <div class="zoom-help">Use mouse wheel to zoom</div>
+
+            <div class="zoom-controls">
+                <button onclick="zoomIn()">Zoom In</button>
+                <button onclick="zoomOut()">Zoom Out</button>
+                <button onclick="resetZoom()">Reset</button>
+            </div>
+
+            <div class="zoom-help">Use mouse wheel OR buttons</div>
+        </div>
+    </div>
+
+    <!-- CART POPUP -->
+    <div class="zoom-modal" id="cartModal">
+        <div class="zoom-content cart-popup-content">
+            <span class="close-btn" id="closeCart">&times;</span>
+
+            <h2>Added to Cart</h2>
+
+            <div class="cart-popup-item">
+                <img src="book.jpg" alt="Book Cover" class="cart-popup-image">
+                <div class="cart-popup-text">
+                    <p><strong>Wings of Fire: The Brightest Night</strong></p>
+                    <p>Paperback</p>
+                    <p id="cartQuantity">Qty: 1</p>
+                </div>
+            </div>
+
+            <div class="cart-popup-details">
+                <p>Price per item: <span>$16.99</span></p>
+                <p>Quantity: <span id="cartQtyNumber">1</span></p>
+                <p>Subtotal: <span id="cartSubtotal">$16.99</span></p>
+                <p>GST (5%): <span id="cartGst">$0.85</span></p>
+                <p>HST (8%): <span id="cartHst">$1.36</span></p>
+                <p><strong>Total (incl. tax): <span id="cartFinalTotal">$19.20</span></strong></p>
+            </div>
+
+            <div class="cart-popup-buttons">
+                <button class="cart-btn">Proceed to Checkout</button>
+                <button class="sample-btn" onclick="closeCartPopup()">Continue Shopping</button>
+            </div>
         </div>
     </div>
 
