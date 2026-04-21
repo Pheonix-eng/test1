@@ -196,3 +196,85 @@ body {
     padding: 8px 12px;
     border-radius: 8px;
 }
+.cart-box {
+    margin-top: 20px;
+    border: 1px solid #ddd;
+    padding: 15px;
+    border-radius: 10px;
+}
+
+.cart-box h3 {
+    margin-top: 0;
+}
+
+#cartItems {
+    font-size: 14px;
+    margin-bottom: 10px;
+}
+
+#cartTotal {
+    font-weight: bold;
+    color: #b12704;
+}
+.zoom-controls {
+    margin-top: 15px;
+    text-align: center;
+}
+
+.zoom-controls button {
+    padding: 8px 15px;
+    margin: 0 5px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+}
+.cart-popup-content {
+    background: white;
+    width: 420px;
+    height: auto;
+    padding: 20px;
+    display: block;
+    color: #111;
+}
+
+.cart-popup-item {
+    display: flex;
+    gap: 15px;
+    margin: 20px 0;
+    align-items: flex-start;
+}
+
+.cart-popup-image {
+    width: 70px;
+    height: 100px;
+    object-fit: cover;
+    border: 1px solid #ccc;
+}
+
+.cart-popup-text p {
+    margin: 4px 0;
+}
+
+.cart-popup-details {
+    margin-top: 20px;
+    border-top: 1px solid #ddd;
+    padding-top: 15px;
+}
+
+.cart-popup-details p {
+    display: flex;
+    justify-content: space-between;
+    margin: 8px 0;
+}
+
+.cart-popup-buttons {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.cart-popup-buttons .sample-btn,
+.cart-popup-buttons .cart-btn {
+    width: 100%;
+}
