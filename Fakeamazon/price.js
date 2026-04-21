@@ -1,39 +1,37 @@
-let prices = {
-    kindle: 8.99,
-    hardcover: 34.43,
-    paperback: 16.99
-};
+const mainImageContainer = document.getElementById("mainImageContainer");
+const zoomModal = document.getElementById("zoomModal");
+const closeZoom = document.getElementById("closeZoom");
+const zoomedImage = document.getElementById("zoomedImage");
 
-let selectedFormat = "paperback";
+let zoomLevel = 1;
 
-function updateDisplay() {
-    document.getElementById("kindlePrice").textContent = "$" + prices.kindle.toFixed(2);
-    document.getElementById("hardcoverPrice").textContent = "$" + prices.hardcover.toFixed(2);
-    document.getElementById("paperbackPrice").textContent = "$" + prices.paperback.toFixed(2);
-    document.getElementById("totalPrice").textContent = "$" + prices[selectedFormat].toFixed(2);
-}
+mainImageContainer.addEventListener("click", function () {
+    zoomModal.classList.add("active");
+    zoomLevel = 1;
+    zoomedImage.style.transform = "scale(1)";
+});
 
-function selectFormat(format) {
-    selectedFormat = format;
-    updateDisplay();
-}
+closeZoom.addEventListener("click", function () {
+    zoomModal.classList.remove("active");
+});
 
-function buyBook() {
-    if (selectedFormat === "paperback") {
-        prices.paperback += 1.25;
-    } else if (selectedFormat === "hardcover") {
-        prices.hardcover += 2.00;
+zoomModal.addEventListener("click", function (event) {
+    if (event.target === zoomModal) {
+        zoomModal.classList.remove("active");
+    }
+});
+
+zoomedImage.addEventListener("wheel", function (event) {
+    event.preventDefault();
+
+    if (event.deltaY < 0) {
+        zoomLevel += 0.1;
     } else {
-        prices.kindle += 0.50;
+        zoomLevel -= 0.1;
     }
 
-    updateDisplay();
-}
+    if (zoomLevel < 1) zoomLevel = 1;
+    if (zoomLevel > 4) zoomLevel = 4;
 
-setInterval(function () {
-    prices.paperback += Math.random() * 0.40;
-    prices.hardcover += Math.random() * 0.60;
-    updateDisplay();
-}, 3000);
-
-updateDisplay();
+    zoomedImage.style.transform = `scale(${zoomLevel})`;
+});
