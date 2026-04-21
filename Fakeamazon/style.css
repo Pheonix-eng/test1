@@ -18,10 +18,17 @@ body {
     text-align: center;
 }
 
+.image-container {
+    width: 220px;
+    margin: 0 auto;
+    cursor: pointer;
+}
+
 .book-image {
     width: 100%;
-    max-width: 220px;
     border: 1px solid #ccc;
+    border-radius: 8px;
+    display: block;
 }
 
 .sample-btn {
@@ -84,6 +91,7 @@ body {
     border-radius: 8px;
     background-color: white;
     flex: 1;
+    cursor: pointer;
 }
 
 .selected {
@@ -102,15 +110,16 @@ body {
     font-size: 16px;
 }
 
-.buy-box h2 {
-    margin-top: 0;
-    color: #b12704;
-    font-size: 28px;
+.buy-box {
+    border: 1px solid #ddd;
+    padding: 15px;
+    border-radius: 10px;
 }
 
 .buy-box h2 {
     margin-top: 0;
     color: #b12704;
+    font-size: 28px;
 }
 
 .cart-btn,
@@ -124,34 +133,66 @@ body {
     font-size: 14px;
 }
 
-.cart-btn:hover {
-    background-color: #f7ca00;
+.cart-btn {
+    background-color: #ffd814;
 }
 
-.buy-btn:hover {
-    background-color: #fa8900;
+.buy-btn {
+    background-color: #ffa41c;
 }
-.book-image {
-    width: 100%;
-    max-width: 220px;
-    border: 1px solid #ccc;
-    border-radius: 8px;
+
+.zoom-modal {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.88);
+    z-index: 9999;
+    justify-content: center;
+    align-items: center;
 }
-.image-container {
-    width: 220px;
-    height: 300px;
+
+.zoom-modal.active {
+    display: flex;
+}
+
+.zoom-content {
+    position: relative;
+    width: 80vw;
+    height: 80vh;
+    background: #111;
+    border-radius: 12px;
     overflow: hidden;
-    border-radius: 10px;
-    border: 1px solid #ccc;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-.book-image {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    transition: transform 0.4s ease;
+.zoomed-image {
+    max-width: none;
+    width: 600px;
+    transform-origin: center center;
+    transition: transform 0.08s linear;
+    user-select: none;
+    -webkit-user-drag: none;
 }
 
-.image-container:hover .book-image {
-    transform: scale(1.4);
+.close-btn {
+    position: absolute;
+    top: 12px;
+    right: 18px;
+    font-size: 38px;
+    color: white;
+    cursor: pointer;
+    z-index: 2;
+}
+
+.zoom-help {
+    position: absolute;
+    bottom: 15px;
+    left: 20px;
+    color: white;
+    font-size: 14px;
+    background: rgba(0, 0, 0, 0.35);
+    padding: 8px 12px;
+    border-radius: 8px;
 }
