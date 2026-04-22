@@ -98,3 +98,12 @@ button:hover {
     margin-top: 0;
     color: #8fd3ff;
 }
+pre {
+    background-color: #0f141d;
+    color: #8fd3ff;
+    padding: 12px;
+    border-radius: 10px;
+    overflow-x: auto;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+}
