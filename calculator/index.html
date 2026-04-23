@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Advanced Calculator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="calculator">
+        <h1>Calculator</h1>
+
+        <select id="modeSelect" onchange="changeMode()">
+            <option value="standard">Standard</option>
+            <option value="scientific">Scientific</option>
+            <option value="programmer">Programmer</option>
+            <option value="converter">Converter</option>
+        </select>
+
+        <input type="text" id="display" readonly>
+
+        <div id="messageBox" class="message-box"></div>
+
+        <div id="standardScientificArea">
+            <div class="buttons">
+                <button onclick="clearDisplay()">C</button>
+                <button onclick="deleteLast()">⌫</button>
+                <button onclick="appendValue('(')" class="scientific-btn">(</button>
+                <button onclick="appendValue(')')" class="scientific-btn">)</button>
+                <button onclick="appendPercent()">%</button>
+
+                <button onclick="appendScientific('sin(')" class="scientific-btn">sin</button>
+                <button onclick="appendScientific('cos(')" class="scientific-btn">cos</button>
+                <button onclick="appendScientific('tan(')" class="scientific-btn">tan</button>
+                <button onclick="appendScientific('log(')" class="scientific-btn">log</button>
+                <button onclick="appendScientific('ln(')" class="scientific-btn">ln</button>
+
+                <button onclick="appendScientific('sqrt(')" class="scientific-btn">√</button>
+                <button onclick="appendScientific('square(')" class="scientific-btn">x²</button>
+                <button onclick="appendValue('^')" class="scientific-btn">xʸ</button>
+                <button onclick="appendScientific('pi')" class="scientific-btn">π</button>
+                <button onclick="appendScientific('e')" class="scientific-btn">e</button>
+
+                <button onclick="appendValue('7')">7</button>
+                <button onclick="appendValue('8')">8</button>
+                <button onclick="appendValue('9')">9</button>
+                <button onclick="appendValue('/')">÷</button>
+                <button onclick="appendValue('*')">×</button>
+
+                <button onclick="appendValue('4')">4</button>
+                <button onclick="appendValue('5')">5</button>
+                <button onclick="appendValue('6')">6</button>
+                <button onclick="appendValue('-')">−</button>
+                <button onclick="appendValue('+')">+</button>
+
+                <button onclick="appendValue('1')">1</button>
+                <button onclick="appendValue('2')">2</button>
+                <button onclick="appendValue('3')">3</button>
+                <button onclick="appendValue('.')">.</button>
+                <button onclick="calculate()" class="equals">=</button>
+
+                <button onclick="appendValue('0')" class="zero">0</button>
+            </div>
+        </div>
+
+        <div id="programmerArea" class="hidden">
+            <div class="programmer-box">
+                <label>Enter Decimal Number</label>
+                <input type="number" id="programmerInput" placeholder="Enter number">
+                <button onclick="convertProgrammer()">Convert</button>
+
+                <div class="programmer-results">
+                    <p>Binary: <span id="binaryResult">-</span></p>
+                    <p>Octal: <span id="octalResult">-</span></p>
+                    <p>Decimal: <span id="decimalResult">-</span></p>
+                    <p>Hexadecimal: <span id="hexResult">-</span></p>
+                </div>
+            </div>
+        </div>
+
+        <div id="converterArea" class="hidden">
+            <div class="converter-box">
+                <label>Conversion Type</label>
+                <select id="converterType" onchange="updateConverterUnits()">
+                    <option value="length">Length</option>
+                    <option value="weight">Weight</option>
+                    <option value="temperature">Temperature</option>
+                </select>
+
+                <label>Value</label>
+                <input type="number" id="converterInput" placeholder="Enter value">
+
+                <label>From</label>
+                <select id="fromUnit"></select>
+
+                <label>To</label>
+                <select id="toUnit"></select>
+
+                <button onclick="convertUnits()">Convert</button>
+
+                <p class="converter-result">Result: <span id="converterResult">-</span></p>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
