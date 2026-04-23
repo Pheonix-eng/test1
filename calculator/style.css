@@ -1,0 +1,114 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #111827;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    color: white;
+}
+
+.calculator {
+    background: #1f2937;
+    padding: 20px;
+    border-radius: 16px;
+    width: 460px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.35);
+}
+
+.calculator h1 {
+    text-align: center;
+    font-size: 24px;
+    margin-top: 0;
+    margin-bottom: 20px;
+}
+
+#modeSelect,
+#display,
+#programmerInput,
+#converterInput,
+#converterType,
+#fromUnit,
+#toUnit {
+    width: 100%;
+    box-sizing: border-box;
+    margin-bottom: 15px;
+    border: none;
+    border-radius: 10px;
+    background: #0f172a;
+    color: white;
+    padding: 12px;
+    font-size: 16px;
+}
+
+#display {
+    height: 60px;
+    font-size: 24px;
+    text-align: right;
+}
+
+.message-box {
+    text-align: center;
+    color: #93c5fd;
+    font-size: 14px;
+    min-height: 20px;
+    margin-bottom: 10px;
+}
+
+.buttons {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 10px;
+}
+
+button {
+    padding: 16px;
+    font-size: 18px;
+    border: none;
+    border-radius: 10px;
+    background: #374151;
+    color: white;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+button:hover {
+    background: #4b5563;
+}
+
+.equals {
+    background: #0ea5e9;
+}
+
+.equals:hover {
+    background: #0284c7;
+}
+
+.zero {
+    grid-column: span 5;
+}
+
+.hidden {
+    display: none;
+}
+
+.programmer-box,
+.converter-box {
+    background: #111827;
+    padding: 15px;
+    border-radius: 12px;
+}
+
+.programmer-box label,
+.converter-box label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+}
+
+.programmer-results p,
+.converter-result {
+    margin: 10px 0;
+    font-size: 16px;
+}
